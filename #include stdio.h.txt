@@ -1,0 +1,35 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+
+#define MAX_ROWS 3
+#define MAX_COLS 3
+#define MAX_LENGTH 10
+void printMatrix(char matrix[MAX_ROWS][MAX_COLS][MAX_LENGTH], int rows, int cols) {
+    int i, j;
+    for (i = 0; i < rows; i++) {
+        for (j = 0; j < cols; j++) {
+            printf("%s\t", matrix[i][j]);
+        }
+        printf("\n");
+    }
+}
+int main() {
+    char matrix[MAX_ROWS][MAX_COLS][MAX_LENGTH];
+    int i, j;
+    strcpy(matrix[0][0], "1");
+    strcpy(matrix[0][1], "2");
+    strcpy(matrix[0][2], "3");
+    strcpy(matrix[1][0], "4");
+    strcpy(matrix[1][1], "5");
+    strcpy(matrix[1][2], "6");
+    strcpy(matrix[2][0], "7");
+    strcpy(matrix[2][1], "8");
+    strcpy(matrix[2][2], "9");
+    printf("Original Matrix:\n");
+    printMatrix(matrix, MAX_ROWS, MAX_COLS);
+    strcpy(matrix[1][1], "X");
+    printf("\nModified Matrix:\n");
+    printMatrix(matrix, MAX_ROWS, MAX_COLS);
+    return 0;
+}
